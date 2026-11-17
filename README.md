@@ -17,6 +17,29 @@ javac BankersAlgorithm.java Main.java
 java Main
 ```
 
+## Example Output
+The program prints the safety check results and explains why resource requests are granted or denied.
+
+```text
+TEST 1: Baseline Safety (S0)
+Process  Need(A,B,C)
+P1       7,4,3
+P2       1,2,2
+P3       6,0,0
+P4       0,1,1
+P5       4,3,1
+
+VERDICT: SAFE, sequence <P2,P4,P1,P3,P5>
+
+TEST 2c: P5 requests <3,3,0>
+Need after pretend-allocation: P5 <1,0,1>
+No process can proceed at Work <0,0,2>:
+  P1 short A,B,C | P2 short A,B | P3 short A | P4 short B | P5 short A
+VERDICT: DENIED, resulting state is UNSAFE
+```
+
+Output shortened for readability.
+
 ## Testing
 The program includes five test scenarios covering safe-state detection, requests exceeding resource limits, unsafe allocations, and successful resource requests.
 
