@@ -13,15 +13,15 @@ A Java implementation of the Banker's Algorithm for deadlock avoidance in operat
 ## Running the Program
 Requires Java 17 or newer. No external dependencies.
 
-```bash
+bash
 javac BankersAlgorithm.java Main.java
 java Main
-```
+
 
 ## Example Output
 The program displays resource requirements, safe execution sequences, and explanations for denied requests.
 
-```text
+text
 TEST 1: Baseline Safety (S0)
 Process  Need(A,B,C)
 P1       7,4,3
@@ -37,7 +37,6 @@ Need after pretend-allocation: P5 <1,0,1>
 No process can proceed at Work <0,0,2>:
   P1 short A,B,C | P2 short A,B | P3 short A | P4 short B | P5 short A
 VERDICT: DENIED, resulting state is UNSAFE
-```
 
 Output shortened for readability.
 
@@ -55,3 +54,4 @@ The tests also verify that denied requests leave the original resource allocatio
 The algorithm tracks allocated resources, maximum demands, remaining needs, and available resources. When a process requests additional resources, the program temporarily applies the allocation and checks whether all processes can still finish. If the resulting state is unsafe, the allocation is reversed.
 
 Built as part of my Operating Systems coursework at the University of Missouri–Kansas City (UMKC).
+
